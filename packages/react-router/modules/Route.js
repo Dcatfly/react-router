@@ -22,6 +22,7 @@ class Route extends React.Component {
           invariant(context, "You should not use <Route> outside a <Router>");
 
           const location = this.props.location || context.location;
+          // computedMatch有点奇怪 官方文档上没有 propTypes中也没有。
           const match = this.props.computedMatch
             ? this.props.computedMatch // <Switch> already computed the match for us
             : this.props.path
@@ -57,6 +58,7 @@ class Route extends React.Component {
             }
           }
 
+          // 咦 这么看来 如果children中有内容时children自己要负责match的展示与消失啊
           return (
             <RouterContext.Provider value={props}>
               {children && !isEmptyChildren(children)
@@ -77,8 +79,10 @@ class Route extends React.Component {
 }
 
 if (__DEV__) {
+  // 实际上生产模式下react自身就会对propTypes做优化 为何还要__DEV__？
   Route.propTypes = {
     children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+    // prop-types还是15 所以没有elementType,是为了兼容react@15吗？但是react-is是16.
     component: (props, propName) => {
       if (props[propName] && !isValidElementType(props[propName])) {
         return new Error(

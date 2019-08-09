@@ -11,9 +11,11 @@ function compilePath(path, options) {
   if (pathCache[path]) return pathCache[path];
 
   const keys = [];
+  // path-to-regexp这个库有点神奇
   const regexp = pathToRegexp(path, keys, options);
   const result = { regexp, keys };
 
+  // 似乎只是超过了10000就不缓存了 但没有清理。
   if (cacheCount < cacheLimit) {
     pathCache[path] = result;
     cacheCount++;
@@ -32,6 +34,7 @@ function matchPath(pathname, options = {}) {
 
   const paths = [].concat(path);
 
+  // 这个reduce实际上只会返回第一个matched 实际上paths可能是有多个path的数组 可以优化下
   return paths.reduce((matched, path) => {
     if (!path) return null;
     if (matched) return matched;

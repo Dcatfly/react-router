@@ -2,37 +2,22 @@
 
 Declarative routing for [React](https://facebook.github.io/react).
 
-## Installation
+## Code Review
 
-Using [npm](https://www.npmjs.com/):
+初看有点乱，因为目录中存在三个地方看起来都存在源码。实际上根目录中的文件和`es/*`下面的文件都是废弃的引用方式。根据`rollup.config.js`可以发现实际入口在`modules`下。
 
-    $ npm install --save react-router
-
-**Note:** This package provides the core routing functionality for React Router, but you might not want to install it directly. If you are writing an application that will run in the browser, you should instead install `react-router-dom`. Similarly, if you are writing a React Native application, you should instead install `react-router-native`. Both of those will install `react-router` as a dependency.
-
-Then with a module bundler like [webpack](https://webpack.github.io/), use as you would anything else:
-
-```js
-// using ES6 modules
-import { Router, Route, Switch } from "react-router";
-
-// using CommonJS modules
-var Router = require("react-router").Router;
-var Route = require("react-router").Route;
-var Switch = require("react-router").Switch;
-```
-
-The UMD build is also available on [unpkg](https://unpkg.com):
-
-```html
-<script src="https://unpkg.com/react-router/umd/react-router.min.js"></script>
-```
-
-You can find the library on `window.ReactRouter`.
-
-## Issues
-
-If you find a bug, please file an issue on [our issue tracker on GitHub](https://github.com/ReactTraining/react-router/issues).
+- [ ] generatePath.js
+- [ ] Lifecycle.js
+- [x] matchPath.js
+- [ ] MemoryRouter.js
+- [ ] Prompt.js
+- [ ] Redirect.js
+- [x] Route.js
+- [x] Router.js
+- [x] RouterContext.js
+- [ ] StaticRouter.js
+- [ ] Switch.js
+- [ ] withRouter.js
 
 ## Credits
 

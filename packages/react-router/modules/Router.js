@@ -6,9 +6,11 @@ import RouterContext from "./RouterContext";
 
 /**
  * The public API for putting history on context.
+ * 这个组件只是为了使用context向下传递location的变化
  */
 class Router extends React.Component {
   static computeRootMatch(pathname) {
+    // 这个静态方法的实现有点诡异，似乎只是为了isExact
     return { path: "/", url: "/", params: {}, isExact: pathname === "/" };
   }
 
@@ -24,6 +26,7 @@ class Router extends React.Component {
     // on the initial render. If there are, they will replace/push when
     // they mount and since cDM fires in children before parents, we may
     // get a new location before the <Router> is mounted.
+    // 一个hack，用来记录未挂载状态下location的变化，等挂载了之后应用变化
     this._isMounted = false;
     this._pendingLocation = null;
 

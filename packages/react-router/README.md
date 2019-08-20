@@ -6,18 +6,18 @@ Declarative routing for [React](https://facebook.github.io/react).
 
 初看有点乱，因为目录中存在三个地方看起来都存在源码。实际上根目录中的文件和`es/*`下面的文件都是废弃的引用方式。根据`rollup.config.js`可以发现实际入口在`modules`下。
 
-- [ ] generatePath.js
-- [ ] Lifecycle.js
+- [x] generatePath.js
+- [x] Lifecycle.js
 - [x] matchPath.js
 - [ ] MemoryRouter.js
 - [ ] Prompt.js
-- [ ] Redirect.js
+- [x] Redirect.js
 - [x] Route.js
 - [x] Router.js
 - [x] RouterContext.js
 - [ ] StaticRouter.js
 - [ ] Switch.js
-- [ ] withRouter.js
+- [x] withRouter.js
 
 ## Credits
 

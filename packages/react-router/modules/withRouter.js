@@ -6,6 +6,7 @@ import invariant from "tiny-invariant";
 
 /**
  * A public higher-order component to access the imperative API
+ * 一个简单的HOC 用来获取router中的context
  */
 function withRouter(Component) {
   const displayName = `withRouter(${Component.displayName || Component.name})`;

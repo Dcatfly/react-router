@@ -9,6 +9,7 @@ import generatePath from "./generatePath";
 
 /**
  * The public API for navigating programmatically with a component.
+ * 这就十分神奇了。。官方文档上还有三个参数（exact,strict,sensitive），说是效果跟Route上的一样，但是这里根本没有接受这三个参数啊。。
  */
 function Redirect({ computedMatch, to, push = false }) {
   return (

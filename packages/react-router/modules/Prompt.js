@@ -7,6 +7,7 @@ import RouterContext from "./RouterContext";
 
 /**
  * The public API for prompting the user before navigating away from a screen.
+ * 用来做跳转提醒
  */
 function Prompt({ message, when = true }) {
   return (
@@ -16,8 +17,10 @@ function Prompt({ message, when = true }) {
 
         if (!when || context.staticContext) return null;
 
+        // 看起来history中存在了block方法可以做prompt
         const method = context.history.block;
 
+        // message传给Lifecycle干嘛。。
         return (
           <Lifecycle
             onMount={self => {

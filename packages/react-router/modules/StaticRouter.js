@@ -7,6 +7,7 @@ import warning from "tiny-warning";
 import Router from "./Router";
 
 function addLeadingSlash(path) {
+  // 实际上文档上说了正确的basename应该是以/开头的。
   return path.charAt(0) === "/" ? path : "/" + path;
 }
 
@@ -49,6 +50,7 @@ function noop() {}
  * can't actually change the current location. Instead, it just records
  * location changes in a context object. Useful mainly in testing and
  * server-rendering scenarios.
+ * 主要用于ssr和test，不能真正改变location，只是在context中做记录。
  */
 class StaticRouter extends React.Component {
   navigateTo(location, action) {
@@ -66,6 +68,7 @@ class StaticRouter extends React.Component {
   render() {
     const { basename = "", context = {}, location = "/", ...rest } = this.props;
 
+    // 这里模拟了一个history的对象结构
     const history = {
       createHref: path => addLeadingSlash(basename + createURL(path)),
       action: "POP",

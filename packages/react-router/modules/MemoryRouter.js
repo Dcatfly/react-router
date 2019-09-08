@@ -7,6 +7,7 @@ import Router from "./Router";
 
 /**
  * The public API for a <Router> that stores location in memory.
+ * emmm 似乎只是为了使用createMemoryHistory创建history
  */
 class MemoryRouter extends React.Component {
   history = createHistory(this.props);

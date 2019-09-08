@@ -9,14 +9,14 @@ Declarative routing for [React](https://facebook.github.io/react).
 - [x] generatePath.js
 - [x] Lifecycle.js
 - [x] matchPath.js
-- [ ] MemoryRouter.js
-- [ ] Prompt.js
+- [x] MemoryRouter.js
+- [x] Prompt.js
 - [x] Redirect.js
 - [x] Route.js
 - [x] Router.js
 - [x] RouterContext.js
-- [ ] StaticRouter.js
-- [ ] Switch.js
+- [x] StaticRouter.js
+- [x] Switch.js
 - [x] withRouter.js
 
 ## Credits

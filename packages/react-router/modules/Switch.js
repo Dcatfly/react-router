@@ -24,6 +24,9 @@ class Switch extends React.Component {
           // here because toArray adds keys to all child elements and we do not want
           // to trigger an unmount/remount for two <Route>s that render the same
           // component at different URLs.
+          // 使用了forEach而没有用toArray.find是因为toArray会为每个children添加key
+          // 而这可能会触发unmount/remount在被不同<Route>使用的同一个组件上。
+          // 感觉触发卸载反而合理一些，毕竟Route变了，但是不触发对性能更好？
           React.Children.forEach(this.props.children, child => {
             if (match == null && React.isValidElement(child)) {
               element = child;

@@ -8,6 +8,7 @@ import warning from "tiny-warning";
  * The public API for a <Router> that uses HTML5 history.
  */
 class BrowserRouter extends React.Component {
+  // emmm。。。
   history = createHistory(this.props);
 
   render() {

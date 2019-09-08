@@ -23,10 +23,10 @@ Declarative routing for [React](https://facebook.github.io/react).
 
 ### react-router-dom
 
-- [ ] BrowserRouter.js
-- [ ] HashRouter.js
-- [ ] Link.js
-- [ ] NavLink.js
+- [x] BrowserRouter.js
+- [x] HashRouter.js
+- [x] Link.js
+- [x] NavLink.js
 
 ## Credits
 

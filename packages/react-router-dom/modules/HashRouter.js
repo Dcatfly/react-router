@@ -16,6 +16,7 @@ class HashRouter extends React.Component {
 }
 
 if (__DEV__) {
+  // hashType应该设置成isRequired..
   HashRouter.propTypes = {
     basename: PropTypes.string,
     children: PropTypes.node,

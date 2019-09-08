@@ -27,6 +27,7 @@ function NavLink({
   const path = typeof to === "object" ? to.pathname : to;
 
   // Regex taken from: https://github.com/pillarjs/path-to-regexp/blob/master/index.js#L202
+  // 666
   const escapedPath = path && path.replace(/([.+*?=^!:${}()[\]|/\\])/g, "\\$1");
 
   return (
@@ -40,6 +41,7 @@ function NavLink({
         const match = escapedPath
           ? matchPath(pathToMatch, { path: escapedPath, exact, strict })
           : null;
+        // 把match结果传给了isActiveProp。。
         const isActive = !!(isActiveProp
           ? isActiveProp(match, context.location)
           : match);

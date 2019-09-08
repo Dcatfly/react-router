@@ -12,6 +12,7 @@ function isModifiedEvent(event) {
  * The public API for rendering a history-aware <a>.
  */
 class Link extends React.Component {
+  // 相当于对a标签做处理，让它不会重载页面，只是跳转到指定路由。
   handleClick(event, history) {
     try {
       if (this.props.onClick) this.props.onClick(event);
@@ -22,6 +23,7 @@ class Link extends React.Component {
 
     if (
       !event.defaultPrevented && // onClick prevented default
+      // 必须是左键点击
       event.button === 0 && // ignore everything but left clicks
       (!this.props.target || this.props.target === "_self") && // let browser handle "target=_blank" etc.
       !isModifiedEvent(event) // ignore clicks with modifier keys
@@ -29,7 +31,6 @@ class Link extends React.Component {
       event.preventDefault();
 
       const method = this.props.replace ? history.replace : history.push;
-
       method(this.props.to);
     }
   }

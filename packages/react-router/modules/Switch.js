@@ -40,7 +40,9 @@ class Switch extends React.Component {
           });
 
           return match
-            ? React.cloneElement(element, { location, computedMatch: match })
+            ? // computedMatch属性看起来像是个内部属性。在Route和Redirect中对这个属性做了处理。
+              // 但是他们的propType以及文档中都没有体现这个属性。这么做不是很优雅。
+              React.cloneElement(element, { location, computedMatch: match })
             : null;
         }}
       </RouterContext.Consumer>
